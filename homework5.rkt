@@ -15,3 +15,17 @@
      )
   )
 
+(define (nestlist l)
+  (if (null? (car l))
+  (cdr l)
+      (if ( or (null? l) (null? (car (car l))))
+          '()
+          (display (cdr l))
+          )
+      )
+)
+
+
+
+
+
