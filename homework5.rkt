@@ -59,3 +59,26 @@
          (cons (* -1 (car lst))
                (negate (cdr lst))))))
 
+
+(define (smup a l)
+	(if (null? l)
+	'()
+	(cons (* a (car l)) (smup a (cdr l)))
+   )
+)
+
+(define (mtup list1 list2)
+	(if (null? list1)
+	'()
+	( (smup (car list1) list2)
+	(cons 0 (mtup (cdr list1) list2))
+)
+)
+)
+
+(define (alist list1 list2)
+  (cond
+    ((equal? list1 '()) list2)
+  ((equal? list2 '()) list1)
+  (else (cons (+ (car list1) (car list2))
+              (alist (cdr list1) (cdr list2))))))
